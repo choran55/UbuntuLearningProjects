@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services — Ubuntu Learning Project</title>
+  <meta name="description" content="Programs and services offered by Ubuntu Learning Project." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+
+  <header class="site-header">
+    <div class="wrap">
+      <h1 class="brand"><a href="index.html">Ubuntu Learning Project</a></h1>
+      <button class="hamburger" aria-label="Toggle navigation">☰</button>
+
+      <nav class="main-nav desktop-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html" aria-current="page">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="register.html">register</a></li>
+          <li><a href="sitemap.html" aria-current="page">Sitemap</a></li>
+        </ul>
+      </nav>
+
+      <nav class="mobile-nav"></nav>
+    </div>
+  </header>
+
+  
+  <main>
+
+    
+    <section class="wrap">
+      <h2>Programs</h2>
+
+      <div class="tabs" role="tablist">
+        <button class="tab-btn" role="tab" aria-selected="true" data-target="#tab1">Workshops</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-target="#tab2">Mentorship</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-target="#tab3">Community Projects</button>
+      </div>
+
+      <div id="tab1" class="tab-panel">Hands-on coding workshops for beginners and intermediates.</div>
+      <div id="tab2" class="tab-panel" hidden>Mentorship from industry volunteers and remote mentors.</div>
+      <div id="tab3" class="tab-panel" hidden>Local projects where learners practice real skills.</div>
+    </section>
+
+    <section class="wrap">
+  <h2>FAQ / Accordion</h2>
+  <div class="accordion" id="faq">
+    <button class="acc-btn" aria-expanded="false">What is a workshop?</button>
+    <div class="acc-panel" hidden>Workshops are hands-on sessions for learners.</div>
+
+    <button class="acc-btn" aria-expanded="false">How do I volunteer?</button>
+    <div class="acc-panel" hidden>Sign up via our enquiry form or email us.</div>
+  </div>
+</section>
+    <section class="wrap">
+      <h2>Search Programs</h2>
+
+      <input id="serviceSearch" placeholder="Filter programs..." />
+
+      <ul id="serviceList" class="service-list"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap"><p>&copy; 2025 Ubuntu Learning Project</p></div>
+  </footer>
+
+  
+  <script>
+    
+    const hamburger = document.querySelector('.hamburger');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const desktopNav = document.querySelector('.desktop-nav ul');
+
+    hamburger.addEventListener('click', () => {
+      mobileNav.classList.toggle('show');
+      mobileNav.innerHTML = desktopNav.outerHTML;
+    });
+
+    
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    const tabPanels = document.querySelectorAll(".tab-panel");
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        tabButtons.forEach(b => b.setAttribute("aria-selected", "false"));
+        btn.setAttribute("aria-selected", "true");
+
+        tabPanels.forEach(panel => panel.hidden = true);
+        document.querySelector(btn.dataset.target).hidden = false;
+      });
+    });
+
+    
+    const programs = [
+      "Python Workshops",
+      "HTML & CSS Basics",
+      "JavaScript Bootcamp",
+      "AI Mentorship",
+      "Career Guidance",
+      "Community Tech Projects",
+      "Robotics Sessions",
+      "Networking Fundamentals"
+    ];
+
+    const list = document.getElementById("serviceList");
+    const search = document.getElementById("serviceSearch");
+
+    function renderList(items) {
+      list.innerHTML = items.map(i => `<li>${i}</li>`).join("");
+    }
+
+    renderList(programs);
+
+    search.addEventListener("input", e => {
+      const value = e.target.value.toLowerCase();
+      const filtered = programs.filter(p => p.toLowerCase().includes(value));
+      renderList(filtered);
+    });
+  </script>
+
+</body>
+</html>

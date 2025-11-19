@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Register — Ubuntu Learning Project</title>
+  <meta name="description"
+    content="Register or contact Ubuntu Learning Project using our unified interactive form with tabs and accordions." />
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  
+  <header class="site-header">
+    <div class="wrap header-wrap">
+
+      <h1 class="brand">
+        <a href="index.html">Ubuntu Learning Project</a>
+      </h1>
+
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="mainNav">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav id="mainNav" class="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="register.html" aria-current="page">Register</a></li>
+          <li><a href="sitemap.html" aria-current="page">Sitemap</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+
+
+  <main class="content-box">
+
+    <h2 class="page-title">Register or Contact Us</h2>
+
+    
+    <div class="tabs">
+      <button class="tab-btn active" data-target="registerTab">Register</button>
+      <button class="tab-btn" data-target="contactTab">Contact</button>
+    </div>
+
+
+   
+    <section id="registerTab" class="tab-content active">
+
+      <h3>Create an Account</h3>
+
+      <form id="registerForm" class="form-box">
+
+        <label>Full Name
+          <input type="text" name="name" required>
+        </label>
+
+        <label>Email
+          <input type="email" name="email" required>
+        </label>
+
+        <label>Password
+          <input type="password" name="password" minlength="8" required>
+        </label>
+
+        <button type="submit" class="btn-primary">Register</button>
+
+      </form>
+
+
+      
+      <div class="accordion">
+
+        <div class="accordion-item">
+          <button class="accordion-header" type="button">
+            Why Register?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-body">
+            You gain access to workshop sign-ups, mentorship bookings, and exclusive project updates.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" type="button">
+            Is it Free?
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="accordion-body">
+            Yes! Ubuntu Learning Project offers free digital education to communities.
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+   
+    <section id="contactTab" class="tab-content">
+
+      <h3>Send Us a Message</h3>
+
+      <form id="contactForm" class="form-box">
+
+        <label>Your Name
+          <input type="text" required>
+        </label>
+
+        <label>Your Email
+          <input type="email" required>
+        </label>
+
+        <label>Subject
+          <input type="text" required>
+        </label>
+
+        <label>Message
+          <textarea rows="5" required></textarea>
+        </label>
+
+        <button type="submit" class="btn-primary">Send Message</button>
+
+      </form>
+
+    </section>
+
+  </main>
+
+
+
+ 
+  <footer class="site-footer">
+    <p>&copy; 2025 Ubuntu Learning Project</p>
+  </footer>
+
+
+
+ 
+  <script src="js/nav.js"></script>
+  <script src="js/tabs.js"></script>
+  <script src="js/accordion.js"></script>
+  <script src="js/forms.js"></script>
+
+</body>
+
+</html>
